@@ -28,27 +28,28 @@ class App extends Component {
   handleClick = async (btn) => {
     console.log(btn);
     const newbtn = { idx: btn.idx, selected: true };
-    const falseButtons = [
-      {
-        idx: 1,
-        selected: false,
-      },
-      {
-        idx: 2,
-        selected: false,
-      },
-      {
-        idx: 3,
-        selected: false,
-      },
-      {
-        idx: 4,
-        selected: false,
-      },
-    ];
-    // const falseButtons = this.state.buttons.map((rb) => {
-    //   (rb.idx = rb.idx), (rb.selected = false);
-    // });
+    // const falseButtons = [
+    //   {
+    //     idx: 1,
+    //     selected: false,
+    //   },
+    //   {
+    //     idx: 2,
+    //     selected: false,
+    //   },
+    //   {
+    //     idx: 3,
+    //     selected: false,
+    //   },
+    //   {
+    //     idx: 4,
+    //     selected: false,
+    //   },
+    // ];
+    const falseButtons = this.state.buttons.map((rb) => ({
+      idx: rb.idx,
+      selected: false,
+    }));
     const newButtons = falseButtons.map((b) =>
       b.idx === btn.idx ? newbtn : b
     );
